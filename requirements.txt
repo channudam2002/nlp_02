@@ -1,0 +1,6 @@
+fastapi
+pydantic
+numpy
+tensorflow
+nltk
+pickle
