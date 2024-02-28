@@ -8,7 +8,7 @@ app = FastAPI()
 class TextAnalytic(BaseModel):
     text: str
 
-@app.post("/predict/")
+@app.post("/predict/", tags=["sentimental prediction"])
 def prediction(request: TextAnalytic):
     result = predict(request.text)
     return {
@@ -20,7 +20,7 @@ def prediction(request: TextAnalytic):
         }
     } 
 
-@app.post("/analyze")
+@app.post("/analyze", tags=["sentimental analysis"])
 def analyze(request: TextAnalytic):
     features = feature_engineering(request.text)
     return {
