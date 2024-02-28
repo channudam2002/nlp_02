@@ -21,11 +21,4 @@ def predict(text):
     X_text =  text_vectorize(text)
     X_numerical = feature_engineering(text)
     result = LOEADED_MODEL.predict([X_text, X_numerical])
-    return {
-        'data':{
-            'result':{
-                'positive_review_rate': round(float(result[0]), 2),
-                'negative_review_rate': round(float(1-result[0]), 2)
-            }
-        }
-    }
+    return result
