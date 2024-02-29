@@ -3,6 +3,5 @@ pydantic
 numpy
 tensorflow
 nltk
-pickle
 pydantic-settings
 pyngrok
