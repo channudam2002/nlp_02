@@ -1,7 +1,10 @@
 import tensorflow as tf
+import warnings
 import pickle
 from keras.layers.experimental.preprocessing import TextVectorization
 from proprocess import preprocessing_text, feature_engineering
+
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 LOEADED_MODEL = tf.keras.models.load_model('models/sentimental.h5')
 print(LOEADED_MODEL.summary())
