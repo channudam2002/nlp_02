@@ -5,7 +5,6 @@ import string
 
 import nltk
 from nltk import pos_tag
-from nltk.util import ngrams
 from nltk.corpus import stopwords
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -58,7 +57,7 @@ def removeStopwords(content):
 
 # remove common
 def removeCommon(content):
-    with open("common_word.txt", "r") as f:
+    with open("./data/common_word.txt", "r") as f:
         temp_common_words = f.readlines()
         f.close()
     common_words = [removeNewline(word) for word in temp_common_words]
@@ -70,7 +69,7 @@ def removeCommon(content):
 
 # count positive words
 def pos_count(content):
-    with open("positive-reviews.txt") as f:
+    with open("./data/positive-reviews.txt") as f:
         temp_pos_words = f.readlines()
         f.close()
     postitive_words = [removeNewline(word) for word in temp_pos_words]
@@ -78,7 +77,7 @@ def pos_count(content):
 
 # count negative words
 def neg_count(content):
-    with open("negative-reviews.txt") as f:
+    with open("./data/negative-reviews.txt") as f:
         temp_neg_words = f.readlines()
         f.close()
     negative_words = [removeNewline(word) for word in temp_neg_words]

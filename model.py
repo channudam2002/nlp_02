@@ -6,7 +6,7 @@ from proprocess import preprocessing_text, feature_engineering
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-LOEADED_MODEL = tf.keras.models.load_model('models/sentimental.h5')
+LOEADED_MODEL = tf.keras.models.load_model('./models/sentimental.h5')
 print(LOEADED_MODEL.summary())
 print(f"Model inputs: {LOEADED_MODEL.inputs}")
 print(f"Model outputs: {LOEADED_MODEL.outputs}")
@@ -14,7 +14,7 @@ print(f"Model outputs: {LOEADED_MODEL.outputs}")
 
 def text_vectorize(text):
     cleaned_text = preprocessing_text(text)
-    from_file = pickle.load(open("vectorizers/vectorizer.pkl", "rb"))
+    from_file = pickle.load(open("./vectorizers/vectorizer.pkl", "rb"))
     vectorizer = TextVectorization.from_config(from_file['config'])
     vectorizer.set_weights(from_file['weights'])
     text = vectorizer([cleaned_text])

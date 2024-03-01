@@ -1,1 +1,10 @@
 __pycache__
+best_model_weights
+data
+models
+vectorizers
+.dockerignore
+.env
+Dockerfile
+*.txt
+*.py
