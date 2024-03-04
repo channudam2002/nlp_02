@@ -59,10 +59,12 @@ def analyze(request: TextAnalytic):
                 'features': {
                     'positive_word_count': float(features[0][0]),
                     'negative_word_count': float(features[0][1]),
-                    'pronoun_count': float(features[0][3]),
-                    'length': float(features[0][5]),
-                    "is_contained_exclamation": bool(features[0][4]),
-                    "is_contained_no": bool(features[0][2])
+                    'pronoun_count': float(features[0][5]),
+                    'length': float(features[0][7]),
+                    "is_contained_exclamation": bool(features[0][6]),
+                    "is_contained_no": bool(features[0][2]),
+                    "is_contained_not": bool(features[0][3]),
+                    "is_contained_but": bool(features[0][4])
                 }
             }
         }

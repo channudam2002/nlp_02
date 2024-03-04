@@ -89,7 +89,15 @@ def isContainNo(content):
 
 # check if contain '!'
 def isContainExclamation(content):
-    return 1 if '!' in content.split() else 0
+    return 1 if '!' in content else 0
+
+# check if contain not 
+def isContainNot(content):
+    return 1 if 'not' in content.split() else 0
+
+# check if contain but
+def isContainBut(content):
+    return 1 if 'but' in content.split() else 0
 
 # check if contain pronouns
 def pron_count(content):
@@ -116,6 +124,8 @@ def feature_engineering(content):
         pos_count(content),
         neg_count(content),
         isContainNo(content),
+        isContainNot(content),
+        isContainBut(content),
         pron_count(content),
         isContainExclamation(content),
         getLength(content)
